@@ -39,7 +39,7 @@ We developed `r Biocpkg("DOSE")` package to promote the investigation of disease
 
 # Citation
 
-If you use `r Biocpkg("DOSE")` in published research, please cite:
+If you use `r Biocpkg("DOSE")` in published research, please cite G. Yu (2015). In addition please cite G. Yu (2010) when using `compareCluster` in `r Biocpkg("clusterProfiler")`, G. Yu (2015) when applying enrichment analysis to NGS data by using `r Biocpkg("ChIPseeker")` and G. Yu (2010) when using `r Biocpkg("GOSemSim")` for GO semantic similarity analysis.
 
 ```
 G Yu, LG Wang, GR Yan, QY He.
@@ -48,6 +48,34 @@ Bioinformatics 2015, 31(4):608-609.
 ```
 
 URL: [http://dx.doi.org/10.1093/bioinformatics/btu684](http://dx.doi.org/10.1093/bioinformatics/btu684)
+
+
+```
+G Yu, F Li, Y Qin, X Bo, Y Wu, S Wang. 
+GOSemSim: an R package for measuring semantic similarity among GO terms and gene products.
+Bioinformatics 2010, 26(7):976-978.
+```
+
+URL: [http://dx.doi.org/10.1093/bioinformatics/btq064](http://dx.doi.org/10.1093/bioinformatics/btq064)
+
+
+```
+G Yu, LG Wang, Y Han, QY He.
+clusterProfiler: an R package for comparing biological themes among gene clusters.
+OMICS: A Journal of Integrative Biology 2012, 16(5):284-287.
+```
+
+URL: [http://dx.doi.org/10.1089/omi.2011.0118](http://dx.doi.org/10.1089/omi.2011.0118)
+
+
+```
+G Yu, LG Wang, QY He.
+ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization.
+Bioinformatics 2015, 31(14):2382-2383.
+```
+
+URL: [http://dx.doi.org/10.1093/bioinformatics/btv145](http://dx.doi.org/10.1093/bioinformatics/btv145)
+
 
 # Introduction
 Public health is an important driving force behind biological and medical research. 
@@ -175,7 +203,7 @@ P-values were adjusted for multiple comparison, and q-values were also calculate
 
 
 ## enrichDO function
-`r Biocpkg("DOSE")` provides an example dataset __*geneList*__ which was derived from `R` package `r Biocpkg("breastCancerMAINZ")` that contained 200 samples, including 29 samples in grade I, 136 samples in grade II and 35 samples in grade III. We computed the ratios of geometric means of grade III samples versue geometric means of grade I samples. Logarithm of these ratios (base 2) were stored in __*geneList*__ dataset.
+`r Biocpkg("DOSE")` provides an example dataset __*geneList*__ which was derived from `R` package `r Biocpkg("breastCancerMAINZ")` that contained 200 samples, including 29 samples in grade I, 136 samples in grade II and 35 samples in grade III. We computed the ratios of geometric means of grade III samples versus geometric means of grade I samples. Logarithm of these ratios (base 2) were stored in __*geneList*__ dataset.
 
 
 In the following example, we selected fold change above 1 as the differential genes and analyzing their disease association.
@@ -275,7 +303,7 @@ y <- gseAnalyzer(geneList,
                  setType       = "DO",
                  nPerm         = 100, 
                  minGSSize     = 120,
-                 pvalueCutoff  = 0.05, 
+                 pvalueCutoff  = 0.2, 
                  pAdjustMethod = "BH",
                  verbose       = FALSE)
 res <- summary(y)
@@ -317,6 +345,9 @@ We provides GO \& KEGG enrichment analysis in `r Biocpkg("clusterProfiler")`[@yu
 + [DisGeNET enrichment analysis via clusterProfiler](http://ygc.name/2015/05/11/use-clusterprofiler-as-an-universal-enrichment-analysis-tool/)
 + [Enrichment Map](http://ygc.name/2014/08/03/enrichment-map/)
 + [dotplot for enrichment result](http://ygc.name/2015/06/23/dotplot-for-enrichment-result/)
++ [functional enrichment for GTEx paper](http://ygc.name/2015/08/13/functional-enrichment-for-gtex-paper/)
++ [functional enrichment analysis with NGS data](http://ygc.name/2015/08/21/functional-enrichment-analysis-with-ngs-data/)
+
 
 # Bugs/Feature Requests
 

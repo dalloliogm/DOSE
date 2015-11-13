@@ -1,4 +1,4 @@
-citHeader("To cite DOSE in publications use:")
+citHeader("Please cite G. Yu (2015) for using DOSE. In addition, please cite G. Yu (2012) when using compareCluster in clusterProfiler package, G. Yu (2015) when applying enrichment analysis to NGS data by using ChIPseeker and G. Yu (2010) when using GOSemSim for GO semantic similarity analysis")
 
 citEntry(entry  = "ARTICLE",
          title  = "DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis",
